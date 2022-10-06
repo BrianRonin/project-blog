@@ -7,7 +7,7 @@ font-family: 'Silkscreen', cursive;
 
 export const GlobalStyles = createGlobalStyle`
 * {
-  margin: 0;
+  margin: 0.1;
   padding: 0;
   box-sizing: border-box;
 }
