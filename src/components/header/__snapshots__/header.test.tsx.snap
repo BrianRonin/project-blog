@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match snapshot 1`] = `
+.c2 {
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+.c6 {
+  color: #000000;
+  text-transform: none;
+  font-size: 6.4rem;
+}
+
+.c0 {
+  width: 100%;
+  max-width: 96rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+
+.c0 .c1 {
+  margin: 0 0 calc(1.6rem - 1rem);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  margin-left: 3.2rem;
+  max-width: 48rem;
+}
+
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 > img {
+  width: 7rem;
+  border-radius: 50%;
+}
+
+.c4 {
+  max-height: 6rem;
+}
+
+.c7 {
+  font-size: 2.4rem;
+}
+
+@media (max-width:768px) {
+  .c6 {
+    font-size: 4.0rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c0 img {
+    display: block;
+  }
+
+  .c0 p {
+    font-size: 1.6rem;
+  }
+
+  .c0 h1 {
+    font-size: 2.4rem;
+  }
+
+  .c0 .header-text-container {
+    padding-left: 4px;
+  }
+}
+
+<div>
+  <header
+    class="c0"
+  >
+    <h1
+      class="c1 c2"
+    >
+      <a
+        class="c3"
+        href="/"
+      >
+        <img
+          alt="alt da imagem"
+          class="c4"
+          src="/assets/images/piramide.png"
+        />
+      </a>
+    </h1>
+    <div
+      class="c5"
+    >
+      <h1
+        class="c1 c6"
+      >
+        um titulo
+      </h1>
+      <div
+        class="c7"
+      >
+        <p>
+          description lorem ipsum banana couve maça
+        </p>
+        <p />
+      </div>
+    </div>
+  </header>
+</div>
+`;
