@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleMeta /> should render name author and link 1`] = `
+.c0 {
+  font-size: 1.6rem;
+  color: #4f4f4fff;
+  font-style: italic;
+}
+
+.c0 .tags span::after {
+  content: ', ';
+}
+
+.c0 .tags span:last-child::after {
+  content: '';
+}
+
+.c0 a {
+  color: #dc143c;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 300msa ease-in-out;
+  transition: all 300msa ease-in-out;
+}
+
+.c0 a:hover {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+<div>
+  <div
+    class="c0 id-component-article-meta"
+  >
+    <span
+      class=""
+    >
+      <p>
+        Por
+         
+        <a
+          href="/author/brian"
+        >
+          <strong>
+            BrianRonin
+          </strong>
+        </a>
+         
+        em 
+        <time
+          datetime="2022-10-05T02:48:15.628Z"
+        >
+          4 de out. de 2022
+          , 
+        </time>
+        <a
+          href="/category/docker"
+        >
+          <strong>
+            Docker, 
+          </strong>
+        </a>
+        <span
+          class="tags"
+        >
+          <span>
+            <a
+              href="/tags/react"
+            >
+              #React
+            </a>
+          </span>
+          <span>
+            <a
+              href="/tags/java-script"
+            >
+              #JavaScript
+            </a>
+          </span>
+        </span>
+      </p>
+    </span>
+  </div>
+</div>
+`;

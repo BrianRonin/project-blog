@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cover /> should render 1`] = `
+.c0 {
+  width: 100%;
+  max-width: 96rem;
+  margin-bottom: 2.4rem;
+}
+
+.c1 {
+  font-size: 2.4rem;
+  color: #4f4f4fff;
+  font-style: italic;
+}
+
+.c1 .tags span::after {
+  content: ', ';
+}
+
+.c1 .tags span:last-child::after {
+  content: '';
+}
+
+.c1 a {
+  color: #dc143c;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 300msa ease-in-out;
+  transition: all 300msa ease-in-out;
+}
+
+.c1 a:hover {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+@media (max-width:768px) {
+  .c1 {
+    font-size: 1.6rem;
+  }
+}
+
+<div>
+  <div
+    class=""
+  >
+    <div>
+      <img
+        alt="alt da imagem"
+        class="c0"
+        src="https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg"
+      />
+      <em>
+        <div
+          class="c1 id-component-article-meta"
+        >
+          <span
+            class=""
+          >
+            <p>
+              Por
+               
+              <a
+                href="/author/brian"
+              >
+                <strong>
+                  BrianRonin
+                </strong>
+              </a>
+               
+              em 
+              <time
+                datetime="2022-10-05T02:48:15.628Z"
+              >
+                4 de out. de 2022
+                , 
+              </time>
+              <a
+                href="/category/docker"
+              >
+                <strong>
+                  Docker, 
+                </strong>
+              </a>
+              <span
+                class="tags"
+              >
+                <span>
+                  <a
+                    href="/tags/react"
+                  >
+                    #React
+                  </a>
+                </span>
+                <span>
+                  <a
+                    href="/tags/java-script"
+                  >
+                    #JavaScript
+                  </a>
+                </span>
+              </span>
+            </p>
+          </span>
+        </div>
+      </em>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cover /> should render and match snapshot 1`] = `
+.c0 {
+  width: 100%;
+  max-width: 96rem;
+  margin-bottom: 2.4rem;
+}
+
+.c1 {
+  font-size: 2.4rem;
+  color: #4f4f4fff;
+  font-style: italic;
+}
+
+.c1 .tags span::after {
+  content: ', ';
+}
+
+.c1 .tags span:last-child::after {
+  content: '';
+}
+
+.c1 a {
+  color: #dc143c;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 300msa ease-in-out;
+  transition: all 300msa ease-in-out;
+}
+
+.c1 a:hover {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+@media (max-width:768px) {
+  .c1 {
+    font-size: 1.6rem;
+  }
+}
+
+<div>
+  <div
+    class=""
+  >
+    <div>
+      <img
+        alt="alt da imagem"
+        class="c0"
+        src="https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg"
+      />
+      <em>
+        <div
+          class="c1 id-component-article-meta"
+        >
+          <span
+            class=""
+          >
+            <p>
+              Por
+               
+              <a
+                href="/author/brian"
+              >
+                <strong>
+                  BrianRonin
+                </strong>
+              </a>
+               
+              em 
+              <time
+                datetime="2022-10-05T02:48:15.628Z"
+              >
+                4 de out. de 2022
+                , 
+              </time>
+              <a
+                href="/category/docker"
+              >
+                <strong>
+                  Docker, 
+                </strong>
+              </a>
+              <span
+                class="tags"
+              >
+                <span>
+                  <a
+                    href="/tags/react"
+                  >
+                    #React
+                  </a>
+                </span>
+                <span>
+                  <a
+                    href="/tags/java-script"
+                  >
+                    #JavaScript
+                  </a>
+                </span>
+              </span>
+            </p>
+          </span>
+        </div>
+      </em>
+    </div>
+  </div>
+</div>
+`;

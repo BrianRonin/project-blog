@@ -10,6 +10,9 @@ const titleSize = {
   `,
   big: (theme: DefaultTheme) => css`
     font-size: ${theme.sizes.xlarge};
+    @media ${theme.media.medium} {
+      font-size: ${theme.sizes.large};
+    }
   `,
   huge: (theme: DefaultTheme) => css`
     font-size: ${theme.sizes.xhuge};

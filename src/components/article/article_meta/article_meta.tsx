@@ -1,12 +1,15 @@
-import { Text } from '../Text'
+import { Text } from '../../Text'
 import * as S from './S.article_meta'
-import { formatDate } from '../../utils/format-date'
-// data autor tags
+import { formatDate } from '../../../utils/format-date'
+import { type_strapi_author } from '~/types/strapi/author'
+import { type_strapi_category } from '../../../types/strapi/category'
+import { type_strapi_tags } from '~/types/strapi/tags'
+
 export type articleMetaProps = {
   createdAt: string
-  author: { slug: string; name: string }
-  tags: { name: string; slug: string }[]
-  category: { name: string; slug: string }
+  author: type_strapi_author
+  tags: type_strapi_tags[]
+  category: type_strapi_category
 }
 export const ArticleMeta = ({
   createdAt,

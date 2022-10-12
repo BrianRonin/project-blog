@@ -3,7 +3,7 @@ import { MarkdownRender, MarkdownRenderProps } from './markdown_render'
 import { markdown } from '../mock'
 
 export default {
-  title: 'Markdown content',
+  title: 'markdown/Render',
   component: MarkdownRender,
   args: {
     children: markdown,

@@ -6,7 +6,7 @@ const name = (theme: DefaultTheme) => css`
 
 export const Main = styled.div`
   ${({ theme }) => css`
-    font-size: ${theme.fonts.sizes.small};
+    font-size: ${theme.fonts.sizes.medium};
     color: ${theme.colors.darkGray};
     font-style: italic;
 
@@ -25,6 +25,10 @@ export const Main = styled.div`
       &:hover {
         filter: brightness(50%);
       }
+    }
+
+    @media ${theme.media.medium} {
+      font-size: ${theme.fonts.sizes.small};
     }
   `}
 `

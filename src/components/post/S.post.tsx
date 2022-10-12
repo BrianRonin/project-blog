@@ -1,11 +1,10 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import { {{ camelCase name }}Props } from './{{ snakeCase name }}'
 
 const name = (theme: DefaultTheme) => css`
   //
 `
 
-export const Main = styled.h1<{{ camelCase name }}Props>`
+export const Main = styled.div`
   ${({ theme }) => css`
     //
   `}

@@ -76,12 +76,14 @@ const obj = {
 
 ![teste](https://img.freepik.com/fotos-gratis/figura-triangular-geometrica-legal-em-uma-luz-de-laser-neon-otima-para-fundos-e-papeis-de-parede_181624-9331.jpg?w=900&t=st=1665128349~exp=1665128949~hmac=95a5b8240720dd5e2efd8b53794a59ba763a1fe1886139002bc3ac20037e2686)
 
+texto qualquer
+
+> A testando blockquote
 
 ~~~js
 console.log('It works!')
 ~~~
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 ---
 
@@ -101,5 +103,7 @@ Para inserir a data e hora atuais:
 -   \`CURRENT_MINUTE\` O minuto atual como dois dígitos
 -   \`CURRENT_SECOND\` O segundo atual como dois dígitos
 -   \`CURRENT_SECONDS_UNIX\` O número de segundos desde a época do Unix
+
+Lorem Ipsum is mply dummy text of the printing and typesetting industry. Lorem Ipsum h as been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 `

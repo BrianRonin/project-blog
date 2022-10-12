@@ -12,6 +12,15 @@ export const Main = styled.div`
       margin: ${theme.spacings.xlarge} 0;
     }
 
+    blockquote {
+      border-left: 5px solid ${theme.colors.mediumGray};
+      color: ${theme.colors.darkGray};
+      filter: brightness(%80);
+      padding-left: ${theme.spacings.medium};
+      font-style: italic;
+      margin: ${theme.spacings.medium};
+    }
+
     a,
     a:visited,
     a:link {
