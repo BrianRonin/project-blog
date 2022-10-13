@@ -6,13 +6,16 @@ export default {
   component: ContainerPost,
   args: {
     children: <h1>OK</h1>,
+    size: 'content',
   },
   argTypes: {
     //
   },
 } as Meta
 
- export const Template: Story<containerPostProps > = (args) => <ContainerPost {...args} />
+export const Template: Story<containerPostProps> = (args) => (
+  <ContainerPost {...args} />
+)
 
 Template.parameters = {
   backgrounds: {

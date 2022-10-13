@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/react'
 import { renderTheme } from '../../styles/render-theme'
-import { MenuLink } from './index'
+import { NavLink } from './nav_link'
 
-describe('<MenuLink />', () => {
+describe('<NavLink />', () => {
   it('should render a link', () => {
-    renderTheme(<MenuLink link={'google.com'}>teste</MenuLink>)
+    renderTheme(<NavLink link={'google.com'}>teste</NavLink>)
     expect(screen.getByRole('link', { name: 'teste' })).toBeInTheDocument()
   })
   it('should have default target', () => {
-    renderTheme(<MenuLink link={'google.com'}>teste</MenuLink>)
+    renderTheme(<NavLink link={'google.com'}>teste</NavLink>)
     expect(screen.getByRole('link', { name: 'teste' })).toHaveAttribute(
       'target',
       '_self',
@@ -16,9 +16,9 @@ describe('<MenuLink />', () => {
   })
   it('should have attributes', () => {
     renderTheme(
-      <MenuLink newTab={true} link={'google.com'}>
+      <NavLink newTab={true} link={'google.com'}>
         teste
-      </MenuLink>,
+      </NavLink>,
     )
     expect(screen.getByRole('link', { name: 'teste' })).toHaveAttribute(
       'target',
@@ -26,7 +26,7 @@ describe('<MenuLink />', () => {
     )
   })
   it('should snapshot', () => {
-    renderTheme(<MenuLink link={'google.com'}>teste</MenuLink>)
+    renderTheme(<NavLink link={'google.com'}>teste</NavLink>)
     expect(screen.getByRole('link', { name: 'teste' })).toMatchSnapshot()
   })
 })

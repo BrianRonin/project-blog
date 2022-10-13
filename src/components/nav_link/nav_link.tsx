@@ -1,13 +1,17 @@
-import * as S from './styles'
+import * as S from './S.nav_link'
 import Link from 'next/link'
 
-export type menuLinkProps = {
+export type navLinkProps = {
   children: React.ReactNode
   link: string
   newTab?: boolean
 }
 
-export const MenuLink = ({ children, link, newTab = false }: menuLinkProps) => {
+export const NavLink = ({
+  children,
+  link,
+  newTab = false,
+}: navLinkProps) => {
   const target = newTab ? '_blank' : '_self'
   const isNextLink = link.match(/^\//) ? true : false
   if (isNextLink) {

@@ -1,9 +1,9 @@
 import { Text } from '../../Text'
 import * as S from './S.article_meta'
 import { formatDate } from '../../../utils/format-date'
-import { type_strapi_author } from '~/types/strapi/author'
+import { type_strapi_author } from '../../../types/strapi/author'
 import { type_strapi_category } from '../../../types/strapi/category'
-import { type_strapi_tags } from '~/types/strapi/tags'
+import { type_strapi_tags } from '../../../types/strapi/tags'
 
 export type articleMetaProps = {
   createdAt: string

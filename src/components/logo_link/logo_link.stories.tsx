@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react/types-6-0'
-import { LogoLink, logoLinkProps } from './index'
+import { LogoLink, logoLinkProps } from './logo_link'
 
 export default {
   title: 'LogoLink',

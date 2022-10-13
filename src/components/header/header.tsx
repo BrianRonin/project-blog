@@ -1,6 +1,6 @@
 import * as S from './S.header'
 import { Heading } from '../Heading/index'
-import { LogoLink } from '../LogoLink'
+import { LogoLink } from '../logo_link/logo_link'
 import { Text } from '../Text'
 
 export type headerProps = {

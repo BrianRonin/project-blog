@@ -1,4 +1,4 @@
-import * as S from './styles'
+import * as S from './S.logo_link'
 import { Heading } from '../Heading'
 import Link from 'next/link'
 
