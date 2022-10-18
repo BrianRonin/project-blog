@@ -2,7 +2,7 @@
 
 exports[`<ArticleMeta /> should render name author and link 1`] = `
 .c0 {
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   color: #4f4f4fff;
   font-style: italic;
 }
@@ -26,6 +26,12 @@ exports[`<ArticleMeta /> should render name author and link 1`] = `
 .c0 a:hover {
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
+}
+
+@media (max-width:768px) {
+  .c0 {
+    font-size: 1.6rem;
+  }
 }
 
 <div>

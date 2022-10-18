@@ -3,5 +3,9 @@ import { render } from '@testing-library/react'
 import { theme } from './theme'
 
 export const renderTheme = (children: any) => {
-  return render(<ThemeProvider theme={theme}>{children}</ThemeProvider>)
+  return render(
+    <ThemeProvider theme={theme}>
+      {children}
+    </ThemeProvider>,
+  )
 }

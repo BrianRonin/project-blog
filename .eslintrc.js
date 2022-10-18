@@ -34,7 +34,8 @@ module.exports = {
     },
   },
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/explicit-module-boundary-types':
+      'off',
     'react/jsx-filename-extension': 0,
     'react/state-in-constructor': 0,
     'no-trailing-spaces': 0,

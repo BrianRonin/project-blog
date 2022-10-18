@@ -1,9 +1,15 @@
-import { Meta, Story } from '@storybook/react/types-6-0'
-import { ArticleHeader, articleHeaderProps } from './article_header'
+import {
+  Meta,
+  Story,
+} from '@storybook/react/types-6-0'
+import {
+  ArticleHeader,
+  articleHeaderProps,
+} from './article_header'
 import { mock_article_header } from './M.article_header'
 
 export default {
-  title: 'Article header',
+  title: 'components/article/Article',
   component: ArticleHeader,
   args: mock_article_header,
   argTypes: {
@@ -11,14 +17,18 @@ export default {
   },
 } as Meta
 
-export const Template: Story<articleHeaderProps> = (args) => (
+export const Template: Story<
+  articleHeaderProps
+> = (args) => (
   <>
     <ArticleHeader {...args} />
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum deleniti
-      odit deserunt non consectetur voluptatem officiis quae totam. Architecto,
-      quia debitis? Reiciendis quas doloribus ab esse nemo sint voluptatibus
-      commodi?
+      Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Laborum deleniti odit
+      deserunt non consectetur voluptatem officiis
+      quae totam. Architecto, quia debitis?
+      Reiciendis quas doloribus ab esse nemo sint
+      voluptatibus commodi?
     </p>
   </>
 )

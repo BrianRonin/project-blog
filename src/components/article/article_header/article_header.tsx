@@ -1,18 +1,27 @@
-import { ArticleMeta, articleMetaProps } from '../article_meta/article_meta'
-import { Cover, coverProps } from '../cover/cover'
+import {
+  ArticleMeta,
+  articleMetaProps,
+} from '../article_meta/article_meta'
+import {
+  CoverWithMeta,
+  coverWithMetaProps,
+} from '../cover_with_meta/cover_with_meta'
 import * as S from './S.article_header'
-import { Heading, HeadingProps } from '../../Heading/index'
+import {
+  Heading,
+  HeadingProps,
+} from '../../Heading/index'
 import { Header } from '../../header/header'
 import { headerProps } from '../../header/header'
 
 export type articleHeaderProps = {
   title: string
   excerpt: string
-  coverProps: coverProps
+  coverWithMetaProps: coverWithMetaProps
 }
 
 export const ArticleHeader = ({
-  coverProps,
+  coverWithMetaProps,
   excerpt,
   title,
 }: articleHeaderProps) => {
@@ -20,7 +29,7 @@ export const ArticleHeader = ({
     <S.Main>
       <Heading size='big'>{title}</Heading>
       <S.Excerpt>{excerpt}</S.Excerpt>
-      <Cover {...coverProps} />
+      <CoverWithMeta {...coverWithMetaProps} />
     </S.Main>
   )
 }

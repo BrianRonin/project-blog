@@ -1,6 +1,6 @@
 import * as S from './S.header'
 import { Heading } from '../Heading/index'
-import { LogoLink } from '../logo_link/logo_link'
+import { LogoLink } from '../MENU_NAV_SIDEBAR/logo_link/logo_link'
 import { Text } from '../Text'
 
 export type headerProps = {
@@ -20,7 +20,11 @@ export const Header = ({
 }: headerProps) => {
   return (
     <S.Main>
-      <LogoLink text={alt} srcImg={srcImg} link='/' />
+      <LogoLink
+        text={alt}
+        srcImg={srcImg}
+        link='/'
+      />
       {!!allowText && (
         <S.TextContainer>
           <Heading>{title}</Heading>
