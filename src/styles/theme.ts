@@ -40,6 +40,7 @@ export const theme = {
   },
   media: {
     medium: '(max-width: 768px)',
+    small: '(max-width: 360px)',
   },
   spacings: {
     xsmall: '8rem',

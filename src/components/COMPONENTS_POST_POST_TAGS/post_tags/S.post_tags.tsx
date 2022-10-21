@@ -1,12 +1,11 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-mport { {{ camelCase name }}Props } from './{{ snakeCase name }}'
-
+import { postTagsProps } from './post_tags'
 
 const name = (theme: DefaultTheme) => css`
   //
 `
 
-export const Main = styled.h1<{{ camelCase name }}Props>`
+export const Main = styled.h1<postTagsProps>`
   ${({ theme }) => css`
     //
   `}

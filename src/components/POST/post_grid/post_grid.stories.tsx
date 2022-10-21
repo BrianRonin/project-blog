@@ -2,6 +2,7 @@ import {
   Meta,
   Story,
 } from '@storybook/react/types-6-0'
+import { mock_post_grid } from './M.post_grid'
 import {
   PostGrid,
   postGridProps,
@@ -10,9 +11,7 @@ import {
 export default {
   title: 'components/post/Post grid',
   component: PostGrid,
-  args: {
-    children: <h1>OK</h1>,
-  },
+  args: mock_post_grid,
   argTypes: {
     //
   },
@@ -24,6 +23,6 @@ export const Template: Story<postGridProps> = (
 
 Template.parameters = {
   backgrounds: {
-    //  default: 'light'
+    default: 'light',
   },
 }

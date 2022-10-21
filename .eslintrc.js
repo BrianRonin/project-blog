@@ -34,6 +34,16 @@ module.exports = {
     },
   },
   rules: {
+    'import/extensions': [
+    'error',
+    'always',
+    {
+      js: 'never',
+      jsx: 'never',
+      mjs: 'never',
+    },
+  ],
+    'no-constant-condition': 0,
     '@typescript-eslint/explicit-module-boundary-types':
       'off',
     'react/jsx-filename-extension': 0,
