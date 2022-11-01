@@ -12,9 +12,9 @@ import {
 import { useState } from 'react'
 
 export type navMenuSidebarProps = {
-  links: navLinkProps[]
+  links?: navLinkProps[]
   title: string
-  srcLogo: string
+  srcLogo?: string
 }
 
 export const NavMenuSidebar = ({
@@ -69,9 +69,8 @@ export const NavMenuSidebar = ({
               }
               link={link.link}
               newTab={link.newTab}
-            >
-              {link.children}
-            </NavLink>
+              text={link.text}
+            />
           ))}
         </S.Nav>
       </S.Main>

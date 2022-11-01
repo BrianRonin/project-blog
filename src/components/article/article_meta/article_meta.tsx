@@ -7,9 +7,9 @@ import { type_strapi_tags } from '../../../types/strapi/tags'
 
 export type articleMetaProps = {
   createdAt: string
-  author: type_strapi_author
-  tags: type_strapi_tags[]
-  category: type_strapi_category
+  author?: type_strapi_author
+  tags?: type_strapi_tags[]
+  category?: type_strapi_category
 }
 export const ArticleMeta = ({
   createdAt,
@@ -22,23 +22,40 @@ export const ArticleMeta = ({
       <S.Span>
         <p>
           Por{' '}
-          <a href={'/author/' + author.slug}>
-            <strong>{author.name}</strong>
-          </a>{' '}
-          em <time dateTime={createdAt}>{formatDate(createdAt)}, </time>
+          {!!author && (
+            <>
+              <a href={'/author/' + author.slug}>
+                <strong>{author.name}</strong>
+              </a>{' '}
+            </>
+          )}
+          {!author && <strong>anônimo </strong>}
+          <time dateTime={createdAt}>
+            {formatDate(createdAt)},{' '}
+          </time>
           {!!category && (
-            <a href={`/category/${category.slug}`}>
-              <strong>{category.name + ', '}</strong>
+            <a
+              href={`/category/${category.slug}`}
+            >
+              <strong>
+                {category.name + ', '}
+              </strong>
             </a>
           )}
-          <span className='tags'>
-            {!!tags &&
-              tags.map((tag, index) => (
-                <span key={`tag-blog-id-${index}`}>
-                  <a href={`/tags/${tag.slug}`}>{tag.name}</a>
-                </span>
-              ))}
-          </span>
+          {!!tags && (
+            <span className='tags'>
+              {!!tags &&
+                tags.map((tag, index) => (
+                  <span
+                    key={`tag-blog-id-${index}`}
+                  >
+                    <a href={`/tags/${tag.slug}`}>
+                      {tag.name}
+                    </a>
+                  </span>
+                ))}
+            </span>
+          )}
         </p>
       </S.Span>
     </S.Main>

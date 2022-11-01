@@ -26,23 +26,8 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    'import/resolver': {
-      'babel-plugin-root-import': {
-        rootPathPrefix: '~',
-        rootPathSuffix: 'src',
-      },
-    },
   },
   rules: {
-    'import/extensions': [
-    'error',
-    'always',
-    {
-      js: 'never',
-      jsx: 'never',
-      mjs: 'never',
-    },
-  ],
     'no-constant-condition': 0,
     '@typescript-eslint/explicit-module-boundary-types':
       'off',

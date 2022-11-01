@@ -5,10 +5,10 @@ import { Text } from '../Text'
 
 export type headerProps = {
   alt: string
-  srcImg: string
+  srcImg?: string
   allowText?: boolean
-  title: string
-  description: string
+  title?: string
+  description?: string
 }
 
 export const Header = ({

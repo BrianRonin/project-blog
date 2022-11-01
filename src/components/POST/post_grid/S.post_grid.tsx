@@ -10,14 +10,13 @@ const name = (theme: DefaultTheme) => css`
 
 export const Main = styled.div<postGridProps>`
   ${({ theme }) => css`
-    max-width: ${theme.sizes.max};
     width: 100%;
   `}
 `
 
 export const Grid = styled.div<postGridProps>`
   ${({ theme }) => css`
-    max-width: max-content;
+    max-width: 150rem;
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(

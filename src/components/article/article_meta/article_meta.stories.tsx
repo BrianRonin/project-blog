@@ -24,8 +24,22 @@ export default {
 export const Template: Story<articleMetaProps> = (
   args,
 ) => <ArticleMeta {...args} />
+export const noAuthorAndTags: Story<
+  articleMetaProps
+> = (args) => (
+  <ArticleMeta
+    {...args}
+    tags={undefined}
+    author={undefined}
+  />
+)
 
 Template.parameters = {
+  backgrounds: {
+    default: 'light',
+  },
+}
+noAuthorAndTags.parameters = {
   backgrounds: {
     default: 'light',
   },

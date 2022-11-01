@@ -21,7 +21,18 @@ export const Template: Story<postGridProps> = (
   args,
 ) => <PostGrid {...args} />
 
+export const noPosts: Story<postGridProps> = (
+  args,
+) => <PostGrid />
+
 Template.parameters = {
+  layout: 'fullscren',
+  backgrounds: {
+    default: 'light',
+  },
+}
+
+noPosts.parameters = {
   backgrounds: {
     default: 'light',
   },

@@ -9,7 +9,7 @@ export default {
   title: 'components/Menu & Nav/Nav link',
   component: NavLink,
   args: {
-    children: 'children',
+    text: 'children',
     link: 'google.com',
   },
   argTypes: {

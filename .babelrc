@@ -18,13 +18,6 @@
             "ssr": false,
             "displayName": false
           }
-        ],
-        [
-          "babel-plugin-root-import",
-          {
-            "rootPathPrefix": "~/",
-            "rootPathSuffix": "./src"
-          }
         ]
       ]
     }
