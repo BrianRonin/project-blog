@@ -8,13 +8,22 @@ const name = (theme: DefaultTheme) => css`
   //
 `
 
-export const Main = styled.div<postGridProps>`
+export const Main = styled.div`
   ${({ theme }) => css`
     width: 100%;
   `}
 `
 
-export const Grid = styled.div<postGridProps>`
+export const ButtonContainer = styled.div`
+  ${({ theme }) => css`
+    padding: 0 ${theme.spacings.large};
+    margin: ${theme.spacings.large}, 0;
+    display: flex;
+    justify-content: center;
+  `}
+`
+
+export const Grid = styled.div`
   ${({ theme }) => css`
     max-width: 150rem;
     display: grid;
@@ -31,7 +40,7 @@ export const Grid = styled.div<postGridProps>`
   `}
 `
 
-export const NotFound = styled.h1<postGridProps>`
+export const NotFound = styled.h1`
   ${({ theme }) => css`
     padding: ${theme.spacings.large};
     text-align: center;

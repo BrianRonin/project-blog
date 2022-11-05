@@ -19,7 +19,8 @@ export const Main = styled.div`
     table td,
     table th {
       padding: ${theme.spacings.small};
-      border: 0.1rem solid ${theme.colors.mediumGray};
+      border: 0.1rem solid
+        ${theme.colors.mediumGray};
     }
   `}
 `

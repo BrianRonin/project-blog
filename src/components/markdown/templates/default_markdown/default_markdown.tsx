@@ -3,7 +3,7 @@ import { MarkdownRender } from '../../render/markdown_render'
 import { CodeDefault as code } from '../../components/code_default/code_default'
 import { TableDefault as table } from '../../components/table_default/table_default'
 import { ImgDefault as img } from '../../components/img_default/img_default'
-import { EmDefault as em } from '../../components/em_default/em_default'
+// import { EmDefault } from '../../components/em_default/em_default'
 export type defaultMarkdownProps = {
   children: string
 }
@@ -15,7 +15,7 @@ export const DefaultMarkdown = ({
     <S.Main>
       <MarkdownRender
         children={children}
-        // components={{ code, table, img, em }}
+        components={{}}
       />
     </S.Main>
   )

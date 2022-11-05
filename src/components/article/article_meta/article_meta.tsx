@@ -27,11 +27,9 @@ export const ArticleMeta = ({
               <Link
                 href={'/author/' + author.slug}
               >
-                <>
-                  <a>
-                    <strong>{author.name}</strong>
-                  </a>{' '}
-                </>
+                <a>
+                  <strong>{author.name} </strong>
+                </a>
               </Link>
             </>
           )}

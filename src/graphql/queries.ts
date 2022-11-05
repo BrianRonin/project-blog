@@ -22,11 +22,11 @@ export const GRAPHQL_QUERY = gql`
       filters: {
         slug: { eq: $slug }
         category: {
-          name: { containsi: $category }
+          slug: { containsi: $category }
         }
         title: { containsi: $title }
-        author: { name: { containsi: $author } }
-        tags: { name: { containsi: $tag } }
+        author: { slug: { containsi: $author } }
+        tags: { slug: { containsi: $tag } }
       }
       pagination: { start: $start, limit: $limit }
     ) {

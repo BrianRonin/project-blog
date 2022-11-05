@@ -55,4 +55,5 @@ export const mock_post_grid = {
       ...mock_article_header,
     },
   ],
+  hasLoadMore: true,
 } as postGridProps

@@ -4,8 +4,8 @@ const name = (theme) => css`
   //
 `
 
-export const Main = styled.div`
+export const Main = styled.code`
   ${({ theme }) => css`
-    //
+    /* color: red; */
   `}
 `

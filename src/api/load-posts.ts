@@ -24,17 +24,18 @@ export type resolveLoadPosts = {
   posts: {
     data: { attributes: type_strapi_post }[]
   }
+  variables?: load_posts_variables
+}
+
+export const default_variables = {
+  sort: 'createdAt:desc',
+  start: 0,
+  limit: 1,
 }
 
 export const loadPosts = async (
   _var: load_posts_variables = {},
 ): Promise<resolveLoadPosts> => {
-  const default_variables = {
-    sort: 'createdAt:desc',
-    start: 0,
-    limit: 10,
-  }
-
   const data = await request(
     config.graphqlUrl,
     GRAPHQL_QUERY,

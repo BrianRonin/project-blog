@@ -1,24 +1,21 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
 import {
-  default_variables,
   loadPosts,
   resolveLoadPosts,
-} from '../api/load-posts'
-import { Posts_template } from '../templates/Posts/Posts'
-import { type_strapi_post } from '../types/strapi/post'
-import { type_strapi_settings } from '../types/strapi/settings'
-import { format_config } from '../utils/format-config'
-import { formater_posts } from '../utils/format-posts'
+} from '../../api/load-posts'
+import { Posts_template } from '../../templates/Posts/Posts'
+import { type_strapi_post } from '../../types/strapi/post'
+import { type_strapi_settings } from '../../types/strapi/settings'
+import { format_config } from '../../utils/format-config'
+import { formater_posts } from '../../utils/format-posts'
 
-export default function Index({
+export default function SearchPage({
   _posts,
   setting,
-  variables,
 }: {
   _posts: { attributes: type_strapi_post }[]
   setting: type_strapi_settings
-  variables: any
 }) {
   const posts = useEffect(() => {
     // console.log(posts)
@@ -41,34 +38,33 @@ export default function Index({
         />
       </Head>
       <Posts_template
-        _posts={formater_posts(_posts)}
+        posts={formater_posts(_posts)}
         settings={format_config(setting)}
-        _variables={variables}
       />
     </>
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (ctx) => {
   let data = null
   try {
-    data = await loadPosts()
+    data = await loadPosts({
+      title: ctx.query.q as string,
+    })
   } catch {
     data = null
   }
 
-  if (!data || !data.posts.data.length) {
+  if (data === null) {
     return { props: { NotFound: true } }
   }
 
   return {
     props: {
       _posts: data.posts.data,
-      setting: data.setting.data,
-      variables: {
-        ...default_variables,
-      },
+      setting: data?.setting
+        ? data.setting.data
+        : data,
     },
-    revalidate: 24 * 60 * 60,
   }
 }
