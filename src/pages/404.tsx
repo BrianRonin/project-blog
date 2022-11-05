@@ -1,5 +1,3 @@
-import { PageNotFound } from '../templates/PageNotFound'
-
 export default function Page404() {
-  return <PageNotFound />
+  return <h1>erro 404</h1>
 }

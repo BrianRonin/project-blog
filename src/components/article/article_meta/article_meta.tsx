@@ -1,9 +1,9 @@
-import { Text } from '../../Text'
 import * as S from './S.article_meta'
 import { formatDate } from '../../../utils/format-date'
 import { type_strapi_author } from '../../../types/strapi/author'
 import { type_strapi_category } from '../../../types/strapi/category'
 import { type_strapi_tags } from '../../../types/strapi/tags'
+import Link from 'next/link'
 
 export type articleMetaProps = {
   createdAt: string
@@ -24,9 +24,15 @@ export const ArticleMeta = ({
           Por{' '}
           {!!author && (
             <>
-              <a href={'/author/' + author.slug}>
-                <strong>{author.name}</strong>
-              </a>{' '}
+              <Link
+                href={'/author/' + author.slug}
+              >
+                <>
+                  <a>
+                    <strong>{author.name}</strong>
+                  </a>{' '}
+                </>
+              </Link>
             </>
           )}
           {!author && <strong>anônimo </strong>}
@@ -34,13 +40,15 @@ export const ArticleMeta = ({
             {formatDate(createdAt)},{' '}
           </time>
           {!!category && (
-            <a
+            <Link
               href={`/category/${category.slug}`}
             >
-              <strong>
-                {category.name + ', '}
-              </strong>
-            </a>
+              <a>
+                <strong>
+                  {category.name + ', '}
+                </strong>
+              </a>
+            </Link>
           )}
           {!!tags && (
             <span className='tags'>
@@ -49,9 +57,11 @@ export const ArticleMeta = ({
                   <span
                     key={`tag-blog-id-${index}`}
                   >
-                    <a href={`/tags/${tag.slug}`}>
-                      {tag.name}
-                    </a>
+                    <Link
+                      href={`/tags/${tag.slug}`}
+                    >
+                      <a>{tag.name}</a>
+                    </Link>
                   </span>
                 ))}
             </span>

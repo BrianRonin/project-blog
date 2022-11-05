@@ -1,5 +1,6 @@
 export type type_strapi_menu_link = {
-  newTab: boolean
+  id?: number
+  new_tab: boolean
   text: string
   link: string
 }

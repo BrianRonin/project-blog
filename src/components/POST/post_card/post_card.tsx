@@ -24,7 +24,7 @@ export const PostCard = ({
             }
             alt={
               coverWithMetaProps.coverWithMeta
-                .altText
+                .alternativeText
             }
           ></S.Cover>
         </a>

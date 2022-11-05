@@ -1,4 +1,7 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, {
+  css,
+  DefaultTheme,
+} from 'styled-components'
 import { Title } from '../Heading/styles'
 
 const name = (theme: DefaultTheme) => css`
@@ -16,18 +19,9 @@ export const Main = styled.header`
     margin: 0 auto;
     font-size: ${theme.fonts.sizes.small};
 
-    /* img {
-      margin: 0 auto;
-    }
-    .header-text-container {
-      padding-left: 4rem;
-    }
-    h1 {
-      margin: 7px 0;
-    } */
-
     ${Title} {
-      margin: 0 0 calc(${theme.spacings.small} - 1rem);
+      margin: 0 0
+        calc(${theme.spacings.small} - 1rem);
     }
 
     @media ${theme.media.medium} {
@@ -45,6 +39,11 @@ export const Main = styled.header`
       .header-text-container {
         padding-left: 4px;
       }
+
+      display: flex;
+      flex-flow: column wrap;
+      margin: 0;
+      margin-bottom: ${theme.spacings.medium};
     }
   `}
 `
@@ -53,6 +52,7 @@ export const TextContainer = styled.div`
     display: flex;
     flex-flow: column wrap;
     margin-left: ${theme.spacings.large};
+    margin-left: 0;
     max-width: 48rem;
   `}
 `

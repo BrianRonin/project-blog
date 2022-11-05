@@ -1,5 +1,4 @@
-export type type_strapi_metadata = {
-  id?: string
+export type atype_strapi_metadata = {
   name: string
   slug: string
 }

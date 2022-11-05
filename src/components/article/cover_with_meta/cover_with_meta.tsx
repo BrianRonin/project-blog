@@ -19,8 +19,8 @@ export const CoverWithMeta = ({
     <S.Main>
       <div>
         <S.Img
-          src={coverWithMeta.url}
-          alt={coverWithMeta.altText}
+          src={coverWithMeta?.url}
+          alt={coverWithMeta?.alternativeText}
         />
         <em>
           <ArticleMeta {...articleMetaProps} />

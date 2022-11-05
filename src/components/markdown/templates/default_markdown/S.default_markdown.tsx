@@ -1,4 +1,7 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, {
+  css,
+  DefaultTheme,
+} from 'styled-components'
 
 const name = (theme: DefaultTheme) => css`
   //
@@ -9,11 +12,12 @@ export const Main = styled.div`
     font-size: ${theme.fonts.sizes.large};
 
     p {
-      margin: ${theme.spacings.xlarge} 0;
+      margin: ${theme.spacings.xlarge} auto;
     }
 
     blockquote {
-      border-left: 5px solid ${theme.colors.mediumGray};
+      border-left: 5px solid
+        ${theme.colors.mediumGray};
       color: ${theme.colors.darkGray};
       filter: brightness(%80);
       padding-left: ${theme.spacings.medium};
@@ -60,11 +64,14 @@ export const Main = styled.div`
 
     hr {
       border: none;
-      border-bottom: 1px solid ${theme.colors.mediumGray};
+      border-bottom: 1px solid
+        ${theme.colors.mediumGray};
     }
 
     @media ${theme.media.medium} {
-      font-size: calc(${theme.fonts.sizes.small} + 0.5rem);
+      font-size: calc(
+        ${theme.fonts.sizes.small} + 0.5rem
+      );
     }
   `}
 `

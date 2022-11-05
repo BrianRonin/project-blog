@@ -1,8 +1,8 @@
 import { markdown } from '../../components/markdown/mock'
 import { DefaultMarkdown } from '../../components/markdown/templates/default_markdown/default_markdown'
-import { baseProps } from './Base'
+import { baseProps_template } from './Base'
 
-export const mock_base = {
+export const mock_base_template = {
   settings: {
     blog_description:
       'sou uma descrição lorem ipsum descrção',
@@ -31,6 +31,6 @@ export const mock_base = {
     ],
   },
   children: DefaultMarkdown({
-    children: markdown,
+    children: 'ok',
   }),
-} as baseProps
+} as baseProps_template

@@ -22,7 +22,7 @@ html {
 
 body {
   ${({ theme }) => css`
-    background: ${theme.colors.mainBg};
+    background: ${theme.colors.white};
   `}
   font-size: 16px;
   font-family: ${({ theme }) =>

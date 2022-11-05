@@ -8,12 +8,14 @@ export type defaultMarkdownProps = {
   children: string
 }
 
-export const DefaultMarkdown = ({ children }: defaultMarkdownProps) => {
+export const DefaultMarkdown = ({
+  children,
+}: defaultMarkdownProps) => {
   return (
     <S.Main>
       <MarkdownRender
         children={children}
-        components={{ code, table, img, em }}
+        // components={{ code, table, img, em }}
       />
     </S.Main>
   )
