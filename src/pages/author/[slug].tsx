@@ -38,7 +38,7 @@ export default function AuthorPage({
         />
       </Head>
       <Posts_template
-        posts={formater_posts(_posts)}
+        _posts={formater_posts(_posts)}
         settings={format_config(setting)}
       />
     </>

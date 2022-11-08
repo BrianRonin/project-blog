@@ -30,7 +30,7 @@ export type resolveLoadPosts = {
 export const default_variables = {
   sort: 'createdAt:desc',
   start: 0,
-  limit: 1,
+  limit: 2,
 }
 
 export const loadPosts = async (

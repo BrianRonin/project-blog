@@ -8,7 +8,7 @@
 //   export interface DefaultTheme extends theme
 // }
 
-import { theme } from '../styles/theme'
+import { theme } from '../styles/themes/default'
 
 type Theme = typeof theme
 

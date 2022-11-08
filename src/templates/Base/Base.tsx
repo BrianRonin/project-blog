@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { Footer } from '../../components/Footer'
 import { GoTop } from '../../components/GoTop'
 import { Header } from '../../components/header/header'
@@ -6,9 +7,7 @@ import { type_strapi_settings } from '../../types/strapi/settings'
 import * as S from './S.Base'
 
 export type baseProps_template = {
-  settings: {
-    menu_link: any
-  }
+  settings: any
   children: React.ReactNode
 }
 
@@ -16,7 +15,8 @@ export const Base_template = ({
   settings,
   children,
 }: baseProps_template) => {
-  // return 'teste'
+  const router = useRouter()
+
   return (
     <S.Main>
       <NavMenuSidebar
@@ -32,6 +32,16 @@ export const Base_template = ({
           alt={settings.logo?.alternativeText}
         />
       </S.Header>
+      <S.SearchContainer>
+        <form action='/search/' method='GET'>
+          <S.Search
+            type={'search'}
+            placeholder={'Encontre posts'}
+            name={'q'}
+            defaultValue={router.query.q}
+          />
+        </form>
+      </S.SearchContainer>
       <S.Content>{children}</S.Content>
       <S.Footer>
         <Footer>teste</Footer>

@@ -2,8 +2,8 @@ import { type_strapi_menu_link } from '../types/strapi/menu_link'
 import { type_strapi_settings } from '../types/strapi/settings'
 
 export const format_config = (
-  obj: type_strapi_settings,
-) => {
+  obj: any,
+): type_strapi_settings => {
   return {
     blog_name: obj.attributes.blog_name,
     blog_description:
@@ -15,18 +15,19 @@ export const format_config = (
         obj.attributes.logo.data.attributes
           .alternativeText,
     },
-    menu_link: obj.attributes.menu_link.reduce<
-      type_strapi_menu_link[]
-    >((prev, m) => {
-      return [
-        ...prev,
-        {
-          text: m.text,
-          link: m.link,
-          new_tab: m.new_tab,
-        },
-      ]
-    }, []),
+    menu_link: obj.attributes.menu_link.reduce(
+      (prev, m) => {
+        return [
+          ...prev,
+          {
+            text: m.text,
+            link: m.link,
+            new_tab: m.new_tab,
+          },
+        ]
+      },
+      [],
+    ),
     footer: obj.attributes.footer,
   }
 }

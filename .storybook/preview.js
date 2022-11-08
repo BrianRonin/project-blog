@@ -1,6 +1,6 @@
-import { ThemeProvider } from 'styled-components'
+import { Theme } from '../src/contexts/theme/theme'
 import { GlobalStyles } from '../src/styles/global-styles'
-import { theme } from '../src/styles/theme.ts'
+import { theme } from '../src/styles/themes/default'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -30,9 +30,9 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={theme}>
+    <Theme>
       <Story />
       <GlobalStyles />
-    </ThemeProvider>
+    </Theme>
   ),
 ]

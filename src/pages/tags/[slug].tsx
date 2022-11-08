@@ -13,9 +13,11 @@ import { formater_posts } from '../../utils/format-posts'
 export default function TagPage({
   _posts,
   setting,
+  _variables,
 }: {
   _posts: { attributes: type_strapi_post }[]
   setting: type_strapi_settings
+  _variables: any
 }) {
   const posts = useEffect(() => {
     // console.log(posts)
@@ -38,8 +40,9 @@ export default function TagPage({
         />
       </Head>
       <Posts_template
-        posts={formater_posts(_posts)}
+        _posts={formater_posts(_posts)}
         settings={format_config(setting)}
+        _variables={_variables}
       />
     </>
   )
@@ -47,10 +50,12 @@ export default function TagPage({
 
 export const getStaticProps = async (ctx) => {
   let data = null
+  const _variables = {
+    tag: ctx.params.slug as string,
+  }
+
   try {
-    data = await loadPosts({
-      tag: ctx.params.slug as string,
-    })
+    data = await loadPosts(_variables)
   } catch {
     data = null
   }
@@ -63,6 +68,7 @@ export const getStaticProps = async (ctx) => {
     props: {
       _posts: data.posts.data,
       setting: data.setting.data,
+      _variables,
     },
     revalidate: 24 * 60 * 60,
   }

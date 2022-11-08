@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
+  default_variables,
   loadPosts,
   resolveLoadPosts,
 } from '../../api/load-posts'
@@ -13,18 +14,25 @@ import { formater_posts } from '../../utils/format-posts'
 export default function CategoryPage({
   _posts,
   setting,
+  _variables,
 }: {
   _posts: { attributes: type_strapi_post }[]
   setting: type_strapi_settings
+  _variables: any
 }) {
-  const posts = useEffect(() => {
-    // console.log(posts)
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    if (_posts) setLoading(false)
+    console.log(_posts)
     console.log(setting)
-    console.log('aqui')
+    // console.log('aqui')
     // console.log('aqui 2')
     // // console.log(posts)
-  }, [])
-  return (
+  }, [_posts])
+
+  return loading ? (
+    <h1>Loading</h1>
+  ) : (
     <>
       <Head>
         <title>
@@ -38,8 +46,9 @@ export default function CategoryPage({
         />
       </Head>
       <Posts_template
-        posts={formater_posts(_posts)}
+        _posts={formater_posts(_posts)}
         settings={format_config(setting)}
+        _variables={_variables}
       />
     </>
   )
@@ -47,10 +56,13 @@ export default function CategoryPage({
 
 export const getStaticProps = async (ctx) => {
   let data = null
+
+  const _variables = {
+    category: ctx.params.slug as string,
+  }
+
   try {
-    data = await loadPosts({
-      category: ctx.params.slug as string,
-    })
+    data = await loadPosts(_variables)
   } catch {
     data = null
   }
@@ -62,9 +74,8 @@ export const getStaticProps = async (ctx) => {
   return {
     props: {
       _posts: data.posts.data,
-      setting: data?.setting
-        ? data.setting.data
-        : data,
+      setting: data.setting.data,
+      _variables,
     },
     revalidate: 24 * 60 * 60,
   }
@@ -72,7 +83,7 @@ export const getStaticProps = async (ctx) => {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [],
     fallback: true,
+    paths: [],
   }
 }

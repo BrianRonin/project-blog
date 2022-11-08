@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { Heading } from '.'
 import { renderTheme } from '../../styles/render-theme'
-import { theme } from '../../styles/theme'
+import { theme } from '../../styles/themes/default'
 
 describe('<Heading />', () => {
   it('should render with default values', () => {
@@ -17,7 +17,9 @@ describe('<Heading />', () => {
     })
   })
   it('should render with white color', () => {
-    renderTheme(<Heading light={true}>testando</Heading>)
+    renderTheme(
+      <Heading light={true}>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })
@@ -27,7 +29,9 @@ describe('<Heading />', () => {
     })
   })
   it('should render correct render size small', () => {
-    renderTheme(<Heading size='small'>testando</Heading>)
+    renderTheme(
+      <Heading size='small'>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })
@@ -37,7 +41,9 @@ describe('<Heading />', () => {
     })
   })
   it('should render correct render size medium', () => {
-    renderTheme(<Heading size='medium'>testando</Heading>)
+    renderTheme(
+      <Heading size='medium'>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })
@@ -47,7 +53,9 @@ describe('<Heading />', () => {
     })
   })
   it('should render correct render size big', () => {
-    renderTheme(<Heading size='big'>testando</Heading>)
+    renderTheme(
+      <Heading size='big'>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })
@@ -57,7 +65,9 @@ describe('<Heading />', () => {
     })
   })
   it('should render correct render size huge', () => {
-    renderTheme(<Heading size='huge'>testando</Heading>)
+    renderTheme(
+      <Heading size='huge'>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })
@@ -67,7 +77,9 @@ describe('<Heading />', () => {
     })
   })
   it('should render correct render with uppercase', () => {
-    renderTheme(<Heading uppercase>testando</Heading>)
+    renderTheme(
+      <Heading uppercase>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })
@@ -95,7 +107,9 @@ describe('<Heading />', () => {
 
 describe('<Heading /> with screen medium', () => {
   it('should render correct render size huge', () => {
-    renderTheme(<Heading size='huge'>testando</Heading>)
+    renderTheme(
+      <Heading size='huge'>testando</Heading>,
+    )
     const heading = screen.getByRole('heading', {
       name: 'testando',
     })

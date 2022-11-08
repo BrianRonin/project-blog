@@ -1,11 +1,11 @@
+import { postCardProps } from './../components/POST/post_card/post_card'
 import { type_strapi_post } from '../types/strapi/post'
-import { type_strapi_tags } from '../types/strapi/tags'
 import { format_cover_with_meta_props } from './format-cover-with-meta-props'
 
 export const formater_posts = (
-  posts: { attributes: type_strapi_post }[],
-) => {
-  return posts.reduce((prev, _post, index) => {
+  posts: any,
+): postCardProps[] => {
+  return posts.reduce((prev: any, _post: any) => {
     const post: type_strapi_post =
       _post.attributes
     const resolve = {

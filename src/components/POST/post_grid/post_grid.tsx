@@ -19,12 +19,12 @@ export type postGridProps = {
 }
 
 export const PostGrid = ({
-  posts,
+  posts = [],
   hasLoadMore,
 }: postGridProps) => {
   return (
     <S.Main>
-      {posts?.length === undefined && (
+      {posts.length === 0 && (
         <S.NotFound>
           Nenhum post encontrado aqui
         </S.NotFound>
@@ -38,7 +38,7 @@ export const PostGrid = ({
             />
           ))}
       </S.Grid>
-      {!!hasLoadMore && (
+      {!!hasLoadMore && posts.length !== 0 && (
         <S.ButtonContainer>
           <Button
             text={

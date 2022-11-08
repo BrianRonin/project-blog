@@ -3,7 +3,7 @@ import {
   Base_template,
   baseProps_template,
 } from '../Base/Base'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { type_strapi_settings } from '../../types/strapi/settings'
 import { PostGrid } from '../../components/POST/post_grid/post_grid'
 import { postCardProps } from '../../components/POST/post_card/post_card'
@@ -24,12 +24,13 @@ export type postsProps_template = {
 export const Posts_template = ({
   settings,
   _posts = [],
-  _variables,
+  _variables = {},
 }: postsProps_template) => {
   const [posts, setPosts] = useState(_posts)
-  const [variables, setVariables] = useState(
-    default_variables,
-  )
+  const [variables, setVariables] = useState({
+    ...default_variables,
+    ..._variables,
+  })
   const [hasMorePosts, sethasMorePosts] =
     useState(true)
   const [

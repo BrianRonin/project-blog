@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
-import {
-  loadPosts,
-  resolveLoadPosts,
-} from '../../api/load-posts'
+import { useEffect, useState } from 'react'
+import { loadPosts } from '../../api/load-posts'
 import { Posts_template } from '../../templates/Posts/Posts'
 import { type_strapi_post } from '../../types/strapi/post'
 import { type_strapi_settings } from '../../types/strapi/settings'
@@ -13,17 +10,22 @@ import { formater_posts } from '../../utils/format-posts'
 export default function SearchPage({
   _posts,
   setting,
+  _variables,
 }: {
   _posts: { attributes: type_strapi_post }[]
   setting: type_strapi_settings
+  _variables: any
 }) {
-  const posts = useEffect(() => {
-    // console.log(posts)
-    // console.log(setting)
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    if (_posts) setLoading(false)
+    console.log(_posts)
+    console.log(setting)
     // console.log('aqui')
     // console.log('aqui 2')
     // // console.log(posts)
-  }, [])
+  }, [_posts])
+
   return (
     <>
       <Head>
@@ -38,19 +40,24 @@ export default function SearchPage({
         />
       </Head>
       <Posts_template
-        posts={formater_posts(_posts)}
+        _posts={formater_posts(_posts)}
         settings={format_config(setting)}
+        _variables={_variables}
       />
     </>
   )
 }
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps = async (
+  ctx: any,
+) => {
   let data = null
+  const _variables = {
+    title: ctx.query.q as string,
+  }
+
   try {
-    data = await loadPosts({
-      title: ctx.query.q as string,
-    })
+    data = await loadPosts(_variables)
   } catch {
     data = null
   }
@@ -65,6 +72,7 @@ export const getServerSideProps = async (ctx) => {
       setting: data?.setting
         ? data.setting.data
         : data,
+      _variables,
     },
   }
 }

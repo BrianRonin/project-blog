@@ -20,9 +20,11 @@ export default function Index({
   setting: type_strapi_settings
   variables: any
 }) {
-  const posts = useEffect(() => {
-    // console.log(posts)
-    // console.log(setting)
+  useEffect(() => {
+    console.log('_posts')
+    console.log(_posts)
+    console.log('setting')
+    console.log(setting)
     // console.log('aqui')
     // console.log('aqui 2')
     // // console.log(posts)

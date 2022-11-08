@@ -2,7 +2,7 @@ import {
   Meta,
   Story,
 } from '@storybook/react/types-6-0'
-import { theme } from '../../../styles/theme'
+import { theme } from '../../../styles/themes/default'
 import { NavLink, navLinkProps } from './nav_link'
 
 export default {

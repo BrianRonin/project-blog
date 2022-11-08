@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import {
   loadPosts,
   resolveLoadPosts,
 } from '../../api/load-posts'
 import { Post_template } from '../../templates/Post/Post'
+import { type_strapi_post } from '../../types/strapi/post'
 import { type_strapi_settings } from '../../types/strapi/settings'
 import { format_config } from '../../utils/format-config'
 import { format_post } from '../../utils/format-post'
@@ -13,9 +15,15 @@ export default function PostPage({
   _posts,
   setting,
 }: {
-  _posts: resolveLoadPosts
+  _posts: any
   setting: type_strapi_settings
 }) {
+  useEffect(() => {
+    console.log('_posts')
+    console.log(_posts)
+    console.log('setting')
+    console.log(setting)
+  }, [])
   const router = useRouter()
   if (router.isFallback) {
     return <h1>Loading ...</h1>
@@ -23,19 +31,21 @@ export default function PostPage({
   return (
     <>
       <Head>
-        <title>
+        {/* <title>
           {_posts.posts.data[0].attributes.title}
-        </title>
+        </title> */}
       </Head>
       <Post_template
-        settings={format_config(setting)}
         post={format_post(_posts)}
+        settings={format_config(setting)}
       />
     </>
   )
 }
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps = async (
+  ctx: any,
+) => {
   let data = null
   try {
     data = await loadPosts({
