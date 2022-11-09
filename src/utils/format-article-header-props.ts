@@ -16,6 +16,7 @@ export const format_article_header = (
     coverWithMetaProps: {
       coverWithMeta: cover,
       articleMetaProps: {
+        allowComments: post.allow_comments,
         createdAt: post.createdAt,
         author,
         tags: tags.reduce<type_strapi_tags[]>(

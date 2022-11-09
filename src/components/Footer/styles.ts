@@ -5,10 +5,9 @@ export const Main = styled.div`
   ${({ theme }) => css`
     text-align: center;
     font-size: ${theme.fonts.sizes.small};
-    border-top: 0.1rem solid ${theme.colors.mediumGray};
-    background-color: white;
+    background-color: ${theme.colors.white};
     a {
-      color: inherit;
+      color: ${theme.colors.darkText};
       text-decoration: none;
       font-size: ${theme.fonts.sizes.small};
     }

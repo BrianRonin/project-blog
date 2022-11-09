@@ -1,5 +1,6 @@
 import {
   createContext,
+  useCallback,
   useEffect,
   useState,
 } from 'react'
@@ -16,12 +17,13 @@ export type theme_provider_props = {
 
 export type theme_context_values = {
   theme: DefaultTheme
-  setTheme?: (mode: 'light' | 'dark') => void
+  setTheme: (mode: 'light' | 'dark') => void
 }
 
 export const theme_context =
   createContext<theme_context_values>({
     theme: default_theme,
+    setTheme: (x) => x,
   })
 
 export const Theme = ({
@@ -40,7 +42,7 @@ export const Theme = ({
   }, [])
 
   const handle_set_theme: theme_context_values['setTheme'] =
-    (mode) => {
+    useCallback((mode) => {
       switch (mode) {
         case 'dark':
           setTheme(dark_theme)
@@ -57,7 +59,7 @@ export const Theme = ({
           )
           break
       }
-    }
+    }, [])
 
   return (
     <theme_context.Provider

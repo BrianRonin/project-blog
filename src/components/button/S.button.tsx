@@ -35,7 +35,7 @@ export const Main = styled.a<
   ${({ theme, size }) => css`
     button {
       background-color: black;
-      color: white;
+      color: ${theme.colors.white};
       ${!!size && sizes[size](theme)};
       padding: 3px ${theme.spacings.large};
       background: ${theme.colors.primary};

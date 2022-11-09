@@ -3,6 +3,7 @@ import { Footer } from '../../components/Footer'
 import { GoTop } from '../../components/GoTop'
 import { Header } from '../../components/header/header'
 import { NavMenuSidebar } from '../../components/MENU_NAV_SIDEBAR/nav_menu_sidebar/nav_menu_sidebar'
+import { ToggleTheme } from '../../components/toggle_theme/toggle_theme'
 import { type_strapi_settings } from '../../types/strapi/settings'
 import * as S from './S.Base'
 
@@ -19,6 +20,7 @@ export const Base_template = ({
 
   return (
     <S.Main>
+      <ToggleTheme />
       <NavMenuSidebar
         links={settings.menu_link}
         srcLogo={settings.logo?.url}
@@ -38,7 +40,7 @@ export const Base_template = ({
             type={'search'}
             placeholder={'Encontre posts'}
             name={'q'}
-            defaultValue={router.query.q}
+            defaultValue={router?.query?.q}
           />
         </form>
       </S.SearchContainer>

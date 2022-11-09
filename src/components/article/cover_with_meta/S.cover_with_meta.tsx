@@ -1,4 +1,7 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, {
+  css,
+  DefaultTheme,
+} from 'styled-components'
 
 const name = (theme: DefaultTheme) => css`
   //

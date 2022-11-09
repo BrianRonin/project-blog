@@ -4,9 +4,11 @@ import styled, {
 } from 'styled-components'
 export const Main = styled.div`
   ${({ theme }) => css`
-    padding-left: 5rem;
+    padding-left: 2.4rem;
+    padding-right: 1rem;
     @media ${theme.media.medium} {
-      padding-left: 1rem;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   `}
 `
@@ -43,12 +45,15 @@ export const Content = styled.div`
     width: 100%;
     margin: 0 auto;
     margin-left: min(5rem, auto);
-    margin-bottom: ${theme.spacings.xhuge};
+    margin-bottom: ${theme.spacings.large};
   `}
 `
 
 export const Footer = styled.div`
   ${({ theme }) => css`
+    border-top: 0.1rem solid
+      ${theme.colors.mediumGray};
+
     max-width: 120rem;
     width: 100%;
     margin: 0 auto;

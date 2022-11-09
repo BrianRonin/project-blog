@@ -6,6 +6,7 @@ import { type_strapi_tags } from '../../../types/strapi/tags'
 import Link from 'next/link'
 
 export type articleMetaProps = {
+  allowComments: boolean
   createdAt: string
   author?: type_strapi_author
   tags?: type_strapi_tags[]

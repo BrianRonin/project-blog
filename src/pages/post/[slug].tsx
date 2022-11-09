@@ -14,7 +14,9 @@ import { format_post } from '../../utils/format-post'
 export default function PostPage({
   _posts,
   setting,
+  slug,
 }: {
+  slug: string
   _posts: any
   setting: type_strapi_settings
 }) {
@@ -31,11 +33,12 @@ export default function PostPage({
   return (
     <>
       <Head>
-        {/* <title>
+        <title>
           {_posts.posts.data[0].attributes.title}
-        </title> */}
+        </title>
       </Head>
       <Post_template
+        slug={slug}
         post={format_post(_posts)}
         settings={format_config(setting)}
       />
@@ -61,6 +64,7 @@ export const getStaticProps = async (
 
   return {
     props: {
+      slug: ctx.params.slug,
       _posts: data,
       setting: data.setting.data,
     },

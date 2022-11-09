@@ -6,10 +6,16 @@ export type footerProps = {
   background?: boolean
 }
 
-export const Footer = ({ children, background = false }: footerProps) => {
+export const Footer = ({
+  children,
+  background = false,
+}: footerProps) => {
   return (
-    <S.Main>
-      <Text>{children}</Text>
-    </S.Main>
+    <>
+      <span></span>
+      <S.Main>
+        <Text>{children}</Text>
+      </S.Main>
+    </>
   )
 }
